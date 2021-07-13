@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 const Header = (props) => {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   const { bg, width, padding } = props;
+=======
+  const { bg, width, padding, children, height, margin } = props;
+>>>>>>> Stashed changes
 =======
   const { bg, width, padding, children, height, margin } = props;
 >>>>>>> Stashed changes
