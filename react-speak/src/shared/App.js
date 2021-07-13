@@ -4,7 +4,7 @@ import React from "react";
 function App() {
   return (
     <React.Fragment>
-      <h1>ㅇ아아아아랑ㄴ마럼ㅇ나ㅣㄹㅁㄴ어라ㅣ</h1>
+      <h1>git test</h1>
     </React.Fragment>
   );
 }
