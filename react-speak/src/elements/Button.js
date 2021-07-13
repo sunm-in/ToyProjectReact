@@ -61,7 +61,7 @@ const FloatButton = styled.button`
   font-weight: 800;
   position: fixed;
   bottom: 50px;
-  right: 16px;
+  right: 13%;
   text-align: center;
   vertical-align: middle;
   border: none;
