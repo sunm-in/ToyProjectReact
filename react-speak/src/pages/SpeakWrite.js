@@ -26,9 +26,6 @@ const SpeakWrite = (props) => {
             <ButtonBox>
               <Button margin="30px auto" width="80px" text="추가하기"></Button>
             </ButtonBox>
-            <Grid>
-              <Button margin="30px 45%" width="80px" text="추가하기"></Button>
-            </Grid>
           </WriteBox>
         </Grid>
       </WriteWrap>
