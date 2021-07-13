@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "../elements/Grid";
 import Header from "../elements/Header";
+import Button from "../elements/Button";
 import Text from "../elements/Text";
 import Input from "../elements/Input";
 function App() {
@@ -13,10 +14,11 @@ function App() {
           </Text>
         </Header>
         <Grid margin="auto">
-          <Input/>
+          <Input />
         </Grid>
       </Grid>
-      </React.Fragment>
+      <Grid bg="#636e72" padding="20px" width="600px" margin="auto"></Grid>
+    </React.Fragment>
   );
 }
 
