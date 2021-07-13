@@ -18,15 +18,13 @@ const SpeakDetail = (props) => {
               </Text>
             </Header>
           </Grid>
-          <DetailWrap>
-            <DetailInputBox>
-              <Input></Input>
-              <Grid is_flex width="400px" padding="60px">
-                <Button width="20%" text="수정하기"></Button>
-                <Button width="20%" text="삭제하기"></Button>
-              </Grid>
-            </DetailInputBox>
-          </DetailWrap>
+            <DetailWrap>
+              <DetailInputBox>
+                <Input placeholder="여기에 입력해주세요"></Input>
+                <Button width="15%" text="수정하기"></Button>
+                <Button width="15%" text="삭제하기"></Button>
+              </DetailInputBox>
+            </DetailWrap>
         </Grid>
       </Grid>
     </React.Fragment>
@@ -44,13 +42,13 @@ const DetailWrap = styled.div`
 
 const DetailInputBox = styled.div`
   width: 50%;
-  height: 40%;
+  height: 10%;
   background-color: white;
   margin: auto;
   margin-top: 60px;
-  padding: 40px;
-  & > Button{
-      margin: 0px 0px 0px 120px;
+  padding: 10%;
+  & > Button {
+    margin: -10% -32% -10% 34.5%;
   }
 `;
 
