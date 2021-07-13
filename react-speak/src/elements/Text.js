@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Text = (props) => {
-  const { color, bold, size, children } = props;
+  const { color, bold, size, children, margin } = props;
 
   const styles = {
     bold: bold,
     color: color,
     size: size,
+    margin: margin,
   };
 
   return (
@@ -22,6 +23,7 @@ Text.defaultProps = {
   bold: false,
   color: "#f1f2f6",
   size: "14px",
+  margin: false,
 };
 
 const P = styled.p`
