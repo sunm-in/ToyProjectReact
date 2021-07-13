@@ -2,13 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Text from "./Text";
 const Header = (props) => {
-<<<<<<< Updated upstream
-  const { bg, width, padding, children } = props;
-=======
-
   const { bg, width, padding, height, margin, children } = props;
-
->>>>>>> Stashed changes
 
   const styles = {
     children: children,
