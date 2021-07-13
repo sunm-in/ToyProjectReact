@@ -4,7 +4,6 @@ import Header from "../elements/Header";
 import Button from "../elements/Button";
 import Text from "../elements/Text";
 import Input from "../elements/Input";
-import styled from "styled-components";
 function App() {
   return (
     <React.Fragment>
@@ -18,7 +17,6 @@ function App() {
           <Input />
         </Grid>
       </Grid>
-
       <Grid bg="#636e72" padding="20px" width="600px" margin="auto"></Grid>
     </React.Fragment>
   );
