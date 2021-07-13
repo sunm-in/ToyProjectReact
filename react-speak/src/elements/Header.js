@@ -1,22 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-
+import Text from "./Text";
 const Header = (props) => {
-  const { bg, width, padding } = props;
+  const { bg, width, padding, children } = props;
 
   const styles = {
+    children: children,
     bg: bg,
     width: width,
     padding: padding,
   };
   return (
     <React.Fragment>
-      <HeaderBox {...styles}></HeaderBox>
+      <HeaderBox {...styles}>{children}</HeaderBox>
     </React.Fragment>
   );
 };
 
 Header.defaultProps = {
+  children: null,
   bg: false,
   width: "100%",
   padding: "4px",
