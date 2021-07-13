@@ -66,5 +66,4 @@ const FloatButton = styled.button`
   border: none;
   border-radius: 50px;
 `;
-
 export default Button;
