@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Text from "./Text";
 const Header = (props) => {
-  const { bg, width, padding, children, height, margin } = props;
+  const { bg, width, padding, height, margin, children } = props;
 
   const styles = {
     children: children,

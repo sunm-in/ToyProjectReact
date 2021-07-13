@@ -4,6 +4,8 @@ import Header from "../elements/Header";
 import Button from "../elements/Button";
 import Text from "../elements/Text";
 import List from "../components/List";
+import Input from "../elements/Input";
+
 function App() {
   return (
     <React.Fragment>
@@ -17,6 +19,7 @@ function App() {
           <List />
         </Grid>
       </Grid>
+      <Grid bg="#636e72" padding="20px" width="600px" margin="auto"></Grid>
     </React.Fragment>
   );
 }

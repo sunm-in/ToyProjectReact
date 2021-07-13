@@ -17,7 +17,7 @@ const List = (props) => {
 
 const ContentsWrap = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #636e72;
   margin: auto;
   margin-top: 40px;
