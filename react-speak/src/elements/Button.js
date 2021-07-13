@@ -68,5 +68,4 @@ const FloatButton = styled.button`
   border-radius: 50px;
   cursor: pointer;
 `;
-
 export default Button;
