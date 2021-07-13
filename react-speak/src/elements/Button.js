@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = (props) => {
-  const { text, children, _onClick, is_float, margin, width, padding, right } = props;
+  const { text, children, _onClick, is_float, margin, width, padding, right } =
+    props;
 
   const styles = {
     margin: margin,
