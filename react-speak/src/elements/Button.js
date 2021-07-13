@@ -48,6 +48,7 @@ const ElButton = styled.button`
   border: none;
   padding: ${(props) => props.padding};
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+  cursor: pointer;
 `;
 
 const FloatButton = styled.button`
@@ -65,6 +66,7 @@ const FloatButton = styled.button`
   vertical-align: middle;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 `;
 
 export default Button;
