@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-
+import Text from "./Text";
 const Header = (props) => {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  const { bg, width, padding } = props;
-=======
+
+
   const { bg, width, padding, children, height, margin } = props;
->>>>>>> Stashed changes
-=======
-  const { bg, width, padding, children, height, margin } = props;
->>>>>>> Stashed changes
+
+
+
 
   const styles = {
+    children: children,
     bg: bg,
     width: width,
     padding: padding,
@@ -21,12 +19,13 @@ const Header = (props) => {
   };
   return (
     <React.Fragment>
-      <HeaderBox {...styles}></HeaderBox>
+      <HeaderBox {...styles}>{children}</HeaderBox>
     </React.Fragment>
   );
 };
 
 Header.defaultProps = {
+  children: null,
   bg: false,
   width: "100%",
   height: "30%",
