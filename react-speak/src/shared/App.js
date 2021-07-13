@@ -19,7 +19,7 @@ function App() {
           <List />
         </Grid>
       </Grid>
-      <Grid bg="#636e72" padding="20px" width="600px" margin="auto"></Grid>
+      
     </React.Fragment>
   );
 }
