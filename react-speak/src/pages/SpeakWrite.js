@@ -23,9 +23,9 @@ const SpeakWrite = (props) => {
             <Grid>
               <Input margin="50px auto" placeholder="텍스트를 입력해주세요." />
             </Grid>
-            <Grid>
-              <Button margin="0px auto" width="80px" text="추가하기"></Button>
-            </Grid>
+            <ButtonBox>
+              <Button margin="30px auto" width="80px" text="추가하기"></Button>
+            </ButtonBox>
           </WriteBox>
         </Grid>
       </WriteWrap>
@@ -50,6 +50,11 @@ const WriteBox = styled.div`
       height: 200px;
       padding: 20px;
   }
+`;
+
+const ButtonBox = styled.div`
+    width: 100px;
+    margin: 0px auto;
 `;
 
 export default SpeakWrite;
