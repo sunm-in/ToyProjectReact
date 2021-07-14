@@ -8,7 +8,7 @@ export const history = createBrowserHistory();
 const middlewares = [thunk.withExtraArgument({ history: history })];
 
 const enhancer = applyMiddleware(...middlewares)
-const rootReducer = combineReducers({ speak });
+const rootReducer = combineReducers({ speak: speak.reducer, });
 const store = createStore(rootReducer, enhancer);
 
 export default store;
