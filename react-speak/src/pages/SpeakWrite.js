@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Grid from "../elements/Grid";
 import Header from "../elements/Header";
-import Input from "../elements/Input";
 import Text from "../elements/Text";
 import Button from "../elements/Button";
 
@@ -11,17 +10,13 @@ import { useDispatch, useSelector } from "react-redux";
 import speak, { addListDB } from "../redux/modules/speak";
 
 const SpeakWrite = (props) => {
-<<<<<<< HEAD
-
-  const input_write = React.useRef();
-=======
   const dispatch = useDispatch();
 
   const nickname_ref = React.useRef();
   const title_ref = React.useRef();
   const content_ref = React.useRef();
-
->>>>>>> main
+  const nickname_ref = React.useRef();
+  const title_ref = React.useRef();
   return (
     <React.Fragment>
       <WriteWrap>
@@ -35,15 +30,11 @@ const SpeakWrite = (props) => {
           </Grid>
           <WriteBox>
             <Grid>
-<<<<<<< HEAD
-              <input margin="50px auto" ref={input_write} placeholder="텍스트를 입력해주세요." />
-            </Grid>
-            <ButtonBox>
-<<<<<<< Updated upstream
-              <Button margin="30px auto" width="80px" text="추가하기" _onClick= {() => {
-                console.log(input_write.current.value)
-              }}></Button>
-=======
+              <input
+                margin="50px auto"
+                placeholder="텍스트를 입력해주세요."
+                ref={nickname_ref}
+              />
               <input
                 margin="50px auto"
                 placeholder="닉네임을 입력해주세요."
@@ -59,6 +50,11 @@ const SpeakWrite = (props) => {
                 placeholder="텍스트를 입력해주세요."
                 ref={content_ref}
               />
+              <input
+                margin="50px auto"
+                placeholder="텍스트를 입력해주세요."
+                ref={title_ref}
+              />
             </Grid>
             <ButtonBox>
               <Button
@@ -68,6 +64,12 @@ const SpeakWrite = (props) => {
                 _onClick={() => {
                   let input_text = {
                     nickname: nickname_ref.current.value,
+                    content: content_ref.current.value,
+                    title: title_ref.current.value
+                  };
+                  dispatch(addListDB(input_text));
+                  console.log(input_text)
+
                     title: title_ref.current.value,
                     content: content_ref.current.value
                   }
@@ -76,10 +78,6 @@ const SpeakWrite = (props) => {
                   // console.log(input_text)
                 }}
               ></Button>
->>>>>>> main
-=======
-              <Button margin="30px auto" width="80px" text="추가하기"></Button>
->>>>>>> Stashed changes
             </ButtonBox>
           </WriteBox>
         </Grid>
@@ -100,10 +98,9 @@ const WriteBox = styled.div`
   background-color: #636e72;
   padding: 10%;
   margin: 10% 0px;
-  & Input {
+  & input {
     width: 100%;
-    height: 200px;
-    padding: 20px;
+    height: 50px;
   }
 `;
 
