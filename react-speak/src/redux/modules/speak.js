@@ -4,38 +4,19 @@ import axios from "axios";
 // axios
 const instance = axios.create({
   baseURL: "http://54.180.160.43:3000",
-  // headers: { authorization: '내 토큰 보내주기' }, // 누가 요청했는지 알려주기
 });
 
-
-export const addListDB = (content, title, nickname) => {
+export const addListDB = (post) => {
   return function (dipatch, getState, { history }) {
+    console.log(post);
     instance
       .post("/api/posts", {
-        content: content,
-        nickname: nickname,
-        title: title,
+        ...post
       }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
       .then((res) => {
         console.log(res);
-        dipatch(addList(content, nickname, title));
-
-
-export const addListDB = (nickname, title, content) => {
-
-  return function (dipatch, getState, { history }) {
-      
-    instance
-      .post("/api/posts", {
-        nickname: nickname,
-        title: title,
-        content: content,
-      }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
-      .then((res) => {
-        console.log(res);
-        dipatch(addList(nickname, title, content));
-
-        history.push("/");
+        // dipatch(addList(post));
+        // history.push("/");
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +27,7 @@ export const addListDB = (nickname, title, content) => {
 export const getListDB = () => {
   return function (dispatch, getState, { history }) {
     instance
-      .get("/api/posts/{id}")
+      .get("/api/posts/${id}")
       .then((res) => {
         let content_list = res.data.posts;
         dispatch(getList(content_list));
@@ -56,7 +37,6 @@ export const getListDB = () => {
       });
   };
 };
-
 
 export const deleteListDB = (id) => {
   return function (dispatch, getState, { history }) {
@@ -91,7 +71,6 @@ export const updateListDB = (content, id) => {
   };
 };
 
-
 const initialState = {
   list: [],
 };
@@ -102,18 +81,10 @@ const speak = createSlice({
   initialState,
   reducers: {
     addList: (state, action) => {
-      const content = action.payload.content;
-      state.list.push({ content });
-
-  name: "speak",
-  initialState,
-  reducers: {
-    addList: (state, action) => {
-      const nickname = action.payload.nickname;
       const title = action.payload.title;
+      const nickname = action.payload.nickname;
       const content = action.payload.content;
-      state.list.push({ nickname, title, content });
-
+      state.list.push({ title, nickname, content });
     },
 
     getList: (state, action) => {
