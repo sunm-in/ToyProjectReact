@@ -8,6 +8,8 @@ import Text from "../elements/Text";
 import Button from "../elements/Button";
 
 const SpeakWrite = (props) => {
+
+  const input_write = React.useRef();
   return (
     <React.Fragment>
       <WriteWrap>
@@ -21,10 +23,12 @@ const SpeakWrite = (props) => {
           </Grid>
           <WriteBox>
             <Grid>
-              <Input margin="50px auto" placeholder="텍스트를 입력해주세요." />
+              <input margin="50px auto" ref={input_write} placeholder="텍스트를 입력해주세요." />
             </Grid>
             <ButtonBox>
-              <Button margin="30px auto" width="80px" text="추가하기"></Button>
+              <Button margin="30px auto" width="80px" text="추가하기" _onClick= {() => {
+                console.log(input_write.current.value)
+              }}></Button>
             </ButtonBox>
           </WriteBox>
         </Grid>
