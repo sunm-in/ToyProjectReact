@@ -4,9 +4,19 @@ import axios from "axios";
 // axios
 const instance = axios.create({
   baseURL: "http://54.180.160.43:3000",
-  // headers: { authorization: '내 토큰 보내주기' }, // 누가 요청했는지 알려주기
 });
 
+export const addListDB = (post) => {
+  return function (dipatch, getState, { history }) {
+    console.log(post);
+    instance
+      .post("/api/posts", {
+        ...post
+      }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
+      .then((res) => {
+        console.log(res);
+        // dipatch(addList(post));
+        // history.push("/");
 export const addListDB = (title, nickname, content) => {
   return function (dipatch, getState, { history }) {
     instance
@@ -29,7 +39,7 @@ export const addListDB = (title, nickname, content) => {
 export const getListDB = () => {
   return function (dispatch, getState, { history }) {
     instance
-      .get("/api/posts/{id}")
+      .get("/api/posts/${id}")
       .then((res) => {
         let content_list = res.data.posts;
         dispatch(getList(content_list));

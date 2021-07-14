@@ -30,11 +30,13 @@ const SpeakWrite = (props) => {
             <Grid>
               <input
                 margin="50px auto"
+                placeholder="텍스트를 입력해주세요."
                 placeholder="닉네임을 입력해주세요."
                 ref={nickname_ref}
               />
               <input
                 margin="50px auto"
+                placeholder="텍스트를 입력해주세요."
                 placeholder="제목을 입력해주세요."
                 ref={title_ref}
               />
@@ -51,12 +53,12 @@ const SpeakWrite = (props) => {
                 text="추가하기"
                 _onClick={() => {
                   let input_text = {
-                    nickname: nickname_ref.current.value,
-                    title: title_ref.current.value,
                     content: content_ref.current.value,
+                    nickname: nickname_ref.current.value,
+                    title: title_ref.current.value
                   };
                   dispatch(addListDB(input_text));
-                  console.log(input_text);
+                  // console.log(input_text)
                 }}
               ></Button>
             </ButtonBox>
