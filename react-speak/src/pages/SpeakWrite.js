@@ -12,6 +12,8 @@ import speak, { addListDB } from "../redux/modules/speak";
 const SpeakWrite = (props) => {
   const dispatch = useDispatch();
 
+  const nickname_ref = React.useRef();
+  const title_ref = React.useRef();
   const content_ref = React.useRef();
   const nickname_ref = React.useRef();
   const title_ref = React.useRef();
@@ -32,6 +34,16 @@ const SpeakWrite = (props) => {
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
                 ref={nickname_ref}
+              />
+              <input
+                margin="50px auto"
+                placeholder="닉네임을 입력해주세요."
+                ref={nickname_ref}
+              />
+              <input
+                margin="50px auto"
+                placeholder="제목을 입력해주세요."
+                ref={title_ref}
               />
               <input
                 margin="50px auto"
@@ -57,6 +69,13 @@ const SpeakWrite = (props) => {
                   };
                   dispatch(addListDB(input_text));
                   console.log(input_text)
+
+                    title: title_ref.current.value,
+                    content: content_ref.current.value
+                  }
+                  dispatch(addListDB(input_text))
+                  props.history.push('/');
+                  // console.log(input_text)
                 }}
               ></Button>
             </ButtonBox>
