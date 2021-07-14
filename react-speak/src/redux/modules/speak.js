@@ -7,34 +7,16 @@ const instance = axios.create({
   // headers: { authorization: '내 토큰 보내주기' }, // 누가 요청했는지 알려주기
 });
 
-
-export const addListDB = (content, title, nickname) => {
+export const addListDB = (title, nickname) => {
   return function (dipatch, getState, { history }) {
     instance
       .post("/api/posts", {
-        content: content,
         nickname: nickname,
         title: title,
       }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
       .then((res) => {
         console.log(res);
-        dipatch(addList(content, nickname, title));
-
-
-export const addListDB = (nickname, title, content) => {
-
-  return function (dipatch, getState, { history }) {
-      
-    instance
-      .post("/api/posts", {
-        nickname: nickname,
-        title: title,
-        content: content,
-      }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
-      .then((res) => {
-        console.log(res);
-        dipatch(addList(nickname, title, content));
-
+        dipatch(addList(nickname, title));
         history.push("/");
       })
       .catch((err) => {
@@ -56,7 +38,6 @@ export const getListDB = () => {
       });
   };
 };
-
 
 export const deleteListDB = (id) => {
   return function (dispatch, getState, { history }) {
@@ -91,7 +72,6 @@ export const updateListDB = (content, id) => {
   };
 };
 
-
 const initialState = {
   list: [],
 };
@@ -102,18 +82,9 @@ const speak = createSlice({
   initialState,
   reducers: {
     addList: (state, action) => {
-      const content = action.payload.content;
-      state.list.push({ content });
-
-  name: "speak",
-  initialState,
-  reducers: {
-    addList: (state, action) => {
-      const nickname = action.payload.nickname;
       const title = action.payload.title;
-      const content = action.payload.content;
-      state.list.push({ nickname, title, content });
-
+      const nickname = action.payload.nickname;
+      state.list.push({ title, nickname });
     },
 
     getList: (state, action) => {
