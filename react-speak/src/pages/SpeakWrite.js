@@ -33,11 +33,11 @@ const SpeakWrite = (props) => {
                 placeholder="텍스트를 입력해주세요."
                 ref={nickname_ref}
               />
-              {/* <input
+              <input
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
                 ref={content_ref}
-              /> */}
+              />
               <input
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
@@ -52,7 +52,8 @@ const SpeakWrite = (props) => {
                 _onClick={() => {
                   let input_text = {
                     nickname: nickname_ref.current.value,
-                    title: title_ref.current.value
+                    title: title_ref.current.value,
+                    content: content_ref.current.value,
                   };
                   dispatch(addListDB(input_text));
                   console.log(input_text)

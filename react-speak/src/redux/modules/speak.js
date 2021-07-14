@@ -7,16 +7,17 @@ const instance = axios.create({
   // headers: { authorization: '내 토큰 보내주기' }, // 누가 요청했는지 알려주기
 });
 
-export const addListDB = (title, nickname) => {
+export const addListDB = (title, nickname, content) => {
   return function (dipatch, getState, { history }) {
     instance
       .post("/api/posts", {
         nickname: nickname,
         title: title,
+        content: content,
       }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
       .then((res) => {
         console.log(res);
-        dipatch(addList(nickname, title));
+        dipatch(addList(nickname, title, content));
         history.push("/");
       })
       .catch((err) => {
@@ -84,7 +85,8 @@ const speak = createSlice({
     addList: (state, action) => {
       const title = action.payload.title;
       const nickname = action.payload.nickname;
-      state.list.push({ title, nickname });
+      const content = action.payload.content;
+      state.list.push({ title, nickname, content });
     },
 
     getList: (state, action) => {
