@@ -31,17 +31,19 @@ const SpeakWrite = (props) => {
               <input
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
+                placeholder="닉네임을 입력해주세요."
                 ref={nickname_ref}
               />
               <input
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
-                ref={content_ref}
+                placeholder="제목을 입력해주세요."
+                ref={title_ref}
               />
               <input
                 margin="50px auto"
-                placeholder="텍스트를 입력해주세요."
-                ref={title_ref}
+                placeholder="내용을 입력해주세요."
+                ref={content_ref}
               />
             </Grid>
             <ButtonBox>

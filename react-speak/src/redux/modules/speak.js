@@ -17,6 +17,18 @@ export const addListDB = (post) => {
         console.log(res);
         // dipatch(addList(post));
         // history.push("/");
+export const addListDB = (title, nickname, content) => {
+  return function (dipatch, getState, { history }) {
+    instance
+      .post("/api/posts", {
+        nickname: nickname,
+        title: title,
+        content: content,
+      }) // 미리 약속한 주소, 서버가 필요로 하는 데이터 넘겨주기
+      .then((res) => {
+        console.log(res);
+        dipatch(addList(nickname, title, content));
+        history.push("/");
       })
       .catch((err) => {
         console.log(err);
