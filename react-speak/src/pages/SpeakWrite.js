@@ -7,9 +7,19 @@ import Input from "../elements/Input";
 import Text from "../elements/Text";
 import Button from "../elements/Button";
 
+import { useDispatch, useSelector } from "react-redux";
+import speak, { addListDB } from "../redux/modules/speak";
+
 const SpeakWrite = (props) => {
+<<<<<<< HEAD
 
   const input_write = React.useRef();
+=======
+  const dispatch = useDispatch();
+
+  const content_ref = React.useRef();
+
+>>>>>>> main
   return (
     <React.Fragment>
       <WriteWrap>
@@ -23,12 +33,32 @@ const SpeakWrite = (props) => {
           </Grid>
           <WriteBox>
             <Grid>
+<<<<<<< HEAD
               <input margin="50px auto" ref={input_write} placeholder="텍스트를 입력해주세요." />
             </Grid>
             <ButtonBox>
               <Button margin="30px auto" width="80px" text="추가하기" _onClick= {() => {
                 console.log(input_write.current.value)
               }}></Button>
+=======
+              <input
+                margin="50px auto"
+                placeholder="텍스트를 입력해주세요."
+                ref={content_ref}
+              />
+            </Grid>
+            <ButtonBox>
+              <Button
+                margin="30px auto"
+                width="80px"
+                text="추가하기"
+                _onClick={() => {
+                  dispatch(addListDB());
+                  
+                  // console.log(content_ref.current.value)
+                }}
+              ></Button>
+>>>>>>> main
             </ButtonBox>
           </WriteBox>
         </Grid>
@@ -50,16 +80,15 @@ const WriteBox = styled.div`
   padding: 10%;
   margin: 10% 0px;
   & Input {
-      width: 100%;
-      height: 200px;
-      padding: 20px;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
   }
 `;
 
-
 const ButtonBox = styled.div`
-    width: 100px;
-    margin: 0px auto;
+  width: 100px;
+  margin: 0px auto;
 `;
 
 export default SpeakWrite;
