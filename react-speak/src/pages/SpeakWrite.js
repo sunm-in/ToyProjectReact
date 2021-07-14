@@ -11,10 +11,15 @@ import { useDispatch, useSelector } from "react-redux";
 import speak, { addListDB } from "../redux/modules/speak";
 
 const SpeakWrite = (props) => {
+<<<<<<< HEAD
+
+  const input_write = React.useRef();
+=======
   const dispatch = useDispatch();
 
   const content_ref = React.useRef();
 
+>>>>>>> main
   return (
     <React.Fragment>
       <WriteWrap>
@@ -28,6 +33,15 @@ const SpeakWrite = (props) => {
           </Grid>
           <WriteBox>
             <Grid>
+<<<<<<< HEAD
+              <input margin="50px auto" ref={input_write} placeholder="텍스트를 입력해주세요." />
+            </Grid>
+            <ButtonBox>
+<<<<<<< Updated upstream
+              <Button margin="30px auto" width="80px" text="추가하기" _onClick= {() => {
+                console.log(input_write.current.value)
+              }}></Button>
+=======
               <input
                 margin="50px auto"
                 placeholder="텍스트를 입력해주세요."
@@ -45,6 +59,10 @@ const SpeakWrite = (props) => {
                   // console.log(content_ref.current.value)
                 }}
               ></Button>
+>>>>>>> main
+=======
+              <Button margin="30px auto" width="80px" text="추가하기"></Button>
+>>>>>>> Stashed changes
             </ButtonBox>
           </WriteBox>
         </Grid>
