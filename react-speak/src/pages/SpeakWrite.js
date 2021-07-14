@@ -37,6 +37,7 @@ const SpeakWrite = (props) => {
               <input margin="50px auto" ref={input_write} placeholder="텍스트를 입력해주세요." />
             </Grid>
             <ButtonBox>
+<<<<<<< Updated upstream
               <Button margin="30px auto" width="80px" text="추가하기" _onClick= {() => {
                 console.log(input_write.current.value)
               }}></Button>
@@ -59,6 +60,9 @@ const SpeakWrite = (props) => {
                 }}
               ></Button>
 >>>>>>> main
+=======
+              <Button margin="30px auto" width="80px" text="추가하기"></Button>
+>>>>>>> Stashed changes
             </ButtonBox>
           </WriteBox>
         </Grid>

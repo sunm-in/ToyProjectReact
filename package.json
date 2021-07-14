@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
+<<<<<<< Updated upstream
+=======
+    "axios": "^0.21.1",
+>>>>>>> Stashed changes
     "create-react-app": "^4.0.3",
     "global": "^4.4.0"
   }
